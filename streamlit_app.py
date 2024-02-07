@@ -1,4 +1,3 @@
-# app.py
 import streamlit as st
 import os
 from PIL import Image
@@ -10,6 +9,12 @@ def process_image(input_image):
     return processed_image
 
 def main():
+    st.set_page_config(
+        page_title="Jigsaw Puzzle App",
+        page_icon="🧩",
+        layout="wide",
+        initial_sidebar_state="expanded",
+    )
     # Create input and output directories if they don't exist
     input_dir = "input"
     output_dir = "output"

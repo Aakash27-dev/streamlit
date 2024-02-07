@@ -16,6 +16,13 @@ def main():
     os.makedirs(input_dir, exist_ok=True)
     os.makedirs(output_dir, exist_ok=True)
 
+    st.set_page_config(
+        page_title="Jigsaw Puzzle App",
+        page_icon="🧩",
+        layout="wide",
+        initial_sidebar_state="expanded",
+    )
+
     st.title("Jigsaw puzzle Solver")
 
     # File uploader for input image

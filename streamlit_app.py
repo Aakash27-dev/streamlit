@@ -53,7 +53,6 @@ def main():
         # Process the image when the "Process Image" button is clicked
         if st.button("Process Image"):
             # Process the image
-            st.subheader("Processed Image:")
             output_image = process_image(input_image)
 
             # Calculate new width and height for the processed output image
@@ -62,6 +61,7 @@ def main():
             output_image_height = int(processed_height * scaling_factor)
 
             with col2:
+                st.subheader("Processed Image:")
                 st.image(output_image, caption="Processed Output Image", use_column_width=True, width=output_image_width)
 
             # Save the output image to the output folder

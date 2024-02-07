@@ -39,10 +39,9 @@ def main():
         # Calculate new width and height for the original input image
         original_width, original_height = input_image.size
         image_width = int(original_width * scaling_factor)
-        image_height = int(original_height * scaling_factor)
 
         with col1:
-            st.image(input_image, caption="Uploaded Input Image", use_column_width=True, width=image_width, height=image_height)
+            st.image(input_image, caption="Uploaded Input Image", use_column_width=True, width=image_width)
 
         # Process the image when the "Process Image" button is clicked
         if st.button("Process Image"):
@@ -52,10 +51,9 @@ def main():
             # Calculate new width and height for the processed output image
             processed_width, processed_height = output_image.size
             processed_image_width = int(processed_width * scaling_factor)
-            processed_image_height = int(processed_height * scaling_factor)
 
             with col2:
-                st.image(output_image, caption="Processed Output Image", use_column_width=True, width=processed_image_width, height=processed_image_height)
+                st.image(output_image, caption="Processed Output Image", use_column_width=True, width=processed_image_width)
 
             # Save the output image to the output folder
             output_filename = os.path.join(output_dir, f"output_{len(os.listdir(output_dir)) + 1}.png")

@@ -38,9 +38,6 @@ def main():
         # Display input and output images side by side
         col1, col2 = st.columns(2)
 
-        # Set the scaling factor (increase or decrease by the same ratio)
-        scaling_factor = st.slider("Scaling Factor", 0.1, 3.0, 1.0, 0.1)
-
         # Calculate new width and height for the original input image
         original_width, original_height = input_image.size
         input_image_width = int(original_width * scaling_factor)

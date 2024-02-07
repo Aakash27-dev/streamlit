@@ -35,7 +35,7 @@ def main():
 
         # Display original input image with a specified width
         with col1:
-            st.image(input_image, caption="Uploaded Input Image", use_column_width=True, width=True)  # Set the width
+            st.image(input_image, caption="Uploaded Input Image", use_column_width=True, width=True, height=True)  # Set the width
 
         # Process the image when the "Process Image" button is clicked
         if st.button("Process Image"):
@@ -44,7 +44,7 @@ def main():
 
             # Display processed output image with a specified width
             with col2:
-                st.image(output_image, caption="Processed Output Image", use_column_width=True, width=True)  # Set the width
+                st.image(output_image, caption="Processed Output Image", use_column_width=True, width=True, height=True)  # Set the width
 
             # Save the output image to the output folder
             output_filename = os.path.join(output_dir, f"output_{len(os.listdir(output_dir)) + 1}.png")

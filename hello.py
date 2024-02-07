@@ -16,13 +16,6 @@ def main():
     os.makedirs(input_dir, exist_ok=True)
     os.makedirs(output_dir, exist_ok=True)
 
-    st.set_page_config(
-        page_title="Jigsaw Puzzle App",
-        page_icon="🧩",
-        layout="wide",
-        initial_sidebar_state="expanded",
-    )
-
     st.title("Jigsaw puzzle Solver")
 
     # File uploader for input image
@@ -40,18 +33,18 @@ def main():
         # Display input and output images side by side
         col1, col2 = st.columns(2)
 
-        # Display original input image
+        # Display original input image with a specified width
         with col1:
-            st.image(input_image, caption="Uploaded Input Image", use_column_width=True)
+            st.image(input_image, caption="Uploaded Input Image", use_column_width=True, width=300)  # Set the width
 
         # Process the image when the "Process Image" button is clicked
         if st.button("Process Image"):
             # Process the image
             output_image = process_image(input_image)
 
-            # Display processed output image
+            # Display processed output image with a specified width
             with col2:
-                st.image(output_image, caption="Processed Output Image", use_column_width=True)
+                st.image(output_image, caption="Processed Output Image", use_column_width=True, width=300)  # Set the width
 
             # Save the output image to the output folder
             output_filename = os.path.join(output_dir, f"output_{len(os.listdir(output_dir)) + 1}.png")

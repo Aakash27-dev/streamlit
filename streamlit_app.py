@@ -29,7 +29,6 @@ def main():
 
     if uploaded_file is not None:
         # Display the uploaded input image
-        st.subheader("Uploaded Image:")
         input_image = Image.open(uploaded_file)
 
         # Save the input image to the input folder
@@ -48,6 +47,7 @@ def main():
         input_image_height = int(original_height * scaling_factor)
 
         with col1:
+            st.subheader("Uploaded Image:")
             st.image(input_image, caption="Uploaded Input Image", use_column_width=True, width=input_image_width)
 
         # Process the image when the "Process Image" button is clicked

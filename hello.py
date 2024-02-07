@@ -53,6 +53,7 @@ def main():
             processed_image_width = int(processed_width * scaling_factor)
 
             with col2:
+                st.text("Output Image")
                 st.image(output_image, caption="Processed Output Image", use_column_width=True, width=processed_image_width)
 
             # Save the output image to the output folder
